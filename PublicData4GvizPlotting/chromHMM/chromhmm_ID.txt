@@ -1,0 +1,23 @@
+E062	Blood & T-cell	Primary mononuclear cells from peripheral blood
+E034	Blood & T-cell	Primary T cells from peripheral blood
+E045	Blood & T-cell	Primary T cells effector/memory enriched from peripheral blood
+E033	Blood & T-cell	Primary T cells from cord blood
+E044	Blood & T-cell	Primary T regulatory cells from peripheral blood
+E043	Blood & T-cell	Primary T helper cells from peripheral blood
+E039	Blood & T-cell	Primary T helper naive cells from peripheral blood
+E041	Blood & T-cell	Primary T helper cells PMA-I stimulated
+E042	Blood & T-cell	Primary T helper 17 cells PMA-I stimulated
+E040	Blood & T-cell	Primary T helper memory cells from peripheral blood 1
+E037	Blood & T-cell	Primary T helper memory cells from peripheral blood 2
+E048	Blood & T-cell	Primary T CD8+ memory cells from peripheral blood
+E038	Blood & T-cell	Primary T helper naive cells from peripheral blood
+E047	Blood & T-cell	Primary T CD8+ naive cells from peripheral blood
+E029	HSC & B-cell	Primary monocytes from peripheral blood
+E031	HSC & B-cell	Primary B cells from cord blood
+E035	HSC & B-cell	Primary hematopoietic stem cells
+E051	HSC & B-cell	Primary hematopoietic stem cells G-CSF-mobilized Male
+E050	HSC & B-cell	Primary hematopoietic stem cells G-CSF-mobilized Female
+E036	HSC & B-cell	Primary hematopoietic stem cells short term culture
+E032	HSC & B-cell	Primary B cells from peripheral blood
+E046	HSC & B-cell	Primary Natural Killer cells from peripheral blood
+E030	HSC & B-cell	Primary neutrophils from peripheral blood
