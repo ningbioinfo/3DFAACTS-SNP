@@ -1,3 +1,4 @@
+# Author: Ning Liu
 workflow_3DFAACTSsnp <- function(snp,atac,hic,pro,enh,TF=0){
   require(GenomicRanges)
   require(tidyverse)

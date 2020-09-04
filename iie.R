@@ -1,3 +1,4 @@
+# Author: Ning Liu
 interaction_intersecting_elements <- function(interaction, gr_elements, minoverlap = 0L){
   # left
   df <- interaction[1:6] %>%

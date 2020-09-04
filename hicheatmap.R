@@ -1,3 +1,4 @@
+# Author: Ning Liu
 from_densematrix_to_hmplotting <- function(matrix, chr = NULL){
   require(tidyverse)
   require(data.table)

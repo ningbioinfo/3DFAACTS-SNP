@@ -1,3 +1,7 @@
+# This script is the source code describing the 3DFAACTS-SNP workflow from the manuscript "3DFAACTS-SNP: Using regulatory T cell-specific epigenomics data to uncover candidate mechanisms of Type-1 Diabetes (T1D) risk".
+# Author: Ning Liu
+# GitHub repo: https://github.com/ningbioinfostruggling/3DFAACTS-SNP
+
 library(tidyverse)
 library(GenomicRanges)
 library(org.Hs.eg.db)

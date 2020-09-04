@@ -1,3 +1,6 @@
+## This script is used to generate track-stacking plot showed in the manuscript "3DFAACTS-SNP: Using regulatory T cell-specific epigenomics data to uncover candidate mechanisms of Type-1 Diabetes (T1D) risk". 
+# Author: Ning Liu
+
 library(Gviz)
 library(GenomicInteractions)
 library(coMET)
@@ -42,14 +45,14 @@ gatrack <- GenomeAxisTrack(add53 = TRUE, add35 = TRUE)
 
 # load Super-enhancers
 
-SE_files <- list.files("./SE/") %>%
+SE_files <- list.files("./PublicData4GvizPlotting/SE/") %>%
   grepn("^0.*SE.bed$",.)
 
 SE_names <- c("B-cell.SE", "CD4-T.SE", "CD4mem-T.SE", "CD8-T-cell.SE", "Treg.SE", "CD4-T-cell.SE")
 
 SE_grs <- SE_files %>%
   as.list() %>%
-  lapply(function(x) import.bed(paste0("./SE/",x)))
+  lapply(function(x) import.bed(paste0("./PublicData4GvizPlotting/SE/",x)))
 
 SE1 <- AnnotationTrack(SE_grs[[1]], name = SE_names[1], width = 15, genome = "hg19", fill="#5D6D7E", col = NULL)
 SE2 <- AnnotationTrack(SE_grs[[2]], name = SE_names[2], width = 15, genome = "hg19", fill="#5D6D7E", col = NULL)
@@ -60,14 +63,14 @@ SE6 <- AnnotationTrack(SE_grs[[6]], name = SE_names[6], width = 15, genome = "hg
 
 # load chromhmm
 
-chromHMMid <- fread("./chromHMM/chromhmm_ID.txt")
+chromHMMid <- fread("./PublicData4GvizPlotting/chromHMM/chromhmm_ID.txt")
 
 get_chromHMM_tracks <- function(chr, start, end){
-  chromHMM_Treg <<- chromHMM_RoadMap(chr = chr, start = start, end = end, bedFilePath = file.path("./chromHMM/E044_chromHMM.bed.gz"), featureDisplay = "all", colorcase='roadmap15', title = "Tregs")
-  chromHMM_Th17 <<- chromHMM_RoadMap(chr = chr, start = start, end = end, bedFilePath = file.path("./chromHMM/E042_chromHMM.bed.gz"), featureDisplay = "all", colorcase='roadmap15', title = "Th17")
-  chromHMM_priT <<- chromHMM_RoadMap(chr = chr, start = start, end = end, bedFilePath = file.path("./chromHMM/E034_chromHMM.bed.gz"), featureDisplay = "all", colorcase='roadmap15', title = "PrimaryT")
-  chromHMM_priB <<- chromHMM_RoadMap(chr = chr, start = start, end = end, bedFilePath = file.path("./chromHMM/E032_chromHMM.bed.gz"), featureDisplay = "all", colorcase='roadmap15', title = "PrimaryB")
-  chromHMM_priHSC <<- chromHMM_RoadMap(chr = chr, start = start, end = end, bedFilePath = file.path("./chromHMM/E035_chromHMM.bed.gz"), featureDisplay = "all", colorcase='roadmap15', title = "PrimaryHSC")
+  chromHMM_Treg <<- chromHMM_RoadMap(chr = chr, start = start, end = end, bedFilePath = file.path("./PublicData4GvizPlotting/chromHMM/E044_chromHMM.bed.gz"), featureDisplay = "all", colorcase='roadmap15', title = "Tregs")
+  chromHMM_Th17 <<- chromHMM_RoadMap(chr = chr, start = start, end = end, bedFilePath = file.path("./PublicData4GvizPlotting/chromHMM/E042_chromHMM.bed.gz"), featureDisplay = "all", colorcase='roadmap15', title = "Th17")
+  chromHMM_priT <<- chromHMM_RoadMap(chr = chr, start = start, end = end, bedFilePath = file.path("./PublicData4GvizPlotting/chromHMM/E034_chromHMM.bed.gz"), featureDisplay = "all", colorcase='roadmap15', title = "PrimaryT")
+  chromHMM_priB <<- chromHMM_RoadMap(chr = chr, start = start, end = end, bedFilePath = file.path("./PublicData4GvizPlotting/chromHMM/E032_chromHMM.bed.gz"), featureDisplay = "all", colorcase='roadmap15', title = "PrimaryB")
+  chromHMM_priHSC <<- chromHMM_RoadMap(chr = chr, start = start, end = end, bedFilePath = file.path("./PublicData4GvizPlotting/chromHMM/E035_chromHMM.bed.gz"), featureDisplay = "all", colorcase='roadmap15', title = "PrimaryHSC")
 }
 
 # set chromosome, start, end to plot, here we aim at generating Figure S2 from Additional File 1.
@@ -92,8 +95,8 @@ get_track_elements <- function(chr, start, end){
   
   # alignment
   
-  bam1 <<- DataTrack(range="./RNAseq/SQ_0350.bedgraph", genome="hg19", type=c("heatmap"), chromosome=chr, name="Th1 RNAseq", gradient = colorRampPalette(c("white","orange", "red"))(10)[1:10])
-  bam2 <<- DataTrack(range="./RNAseq/SQ_0351.bedgraph", genome="hg19", type=c("heatmap"), chromosome=chr, name="Treg RNAseq", gradient = colorRampPalette(c("white","orange", "red"))(10)[1:10])
+  bam1 <<- DataTrack(range="./PublicData4GvizPlotting/RNAseq/SQ_0350.bedgraph", genome="hg19", type=c("heatmap"), chromosome=chr, name="Th1 RNAseq", gradient = colorRampPalette(c("white","orange", "red"))(10)[1:10])
+  bam2 <<- DataTrack(range="./PublicData4GvizPlotting/RNAseq/SQ_0351.bedgraph", genome="hg19", type=c("heatmap"), chromosome=chr, name="Treg RNAseq", gradient = colorRampPalette(c("white","orange", "red"))(10)[1:10])
   
   #atac
   dtrack.atac <<- DataTrack(atac_treg, chromosome = chr,
